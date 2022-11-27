@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundGravity="fill"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-89dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="267dp"
+                android:layout_gravity="fill"
+                app:srcCompat="@drawable/banner" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="177dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgFurniture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="111dp"
+                    app:srcCompat="@drawable/furniture" />
+
+                <Button
+                    android:id="@+id/btnFurniture"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:text="Más Información" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgTech"
+                    android:layout_width="wrap_content"
+                    android:layout_height="101dp"
+                    app:srcCompat="@drawable/tecnology" />
+
+                <Button
+                    android:id="@+id/btnTech"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:text="Más información" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgSports"
+                    android:layout_width="wrap_content"
+                    android:layout_height="109dp"
+                    app:srcCompat="@drawable/sports" />
+
+                <Button
+                    android:id="@+id/btnSports"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:text="Más información" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
