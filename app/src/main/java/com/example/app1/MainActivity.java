@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
                 intent.putExtra("description","En esta sección encontarrá variedad de Muebeles y accesorios para el hogar");
-                intent.putExtra("image",R.drawable.imgFurniture);
+                intent.putExtra("image",R.drawable.furniture);
                 startActivity(intent);
             }
         });
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
                 intent.putExtra("description","En esta sección encontrará todos los artículos tecnolóogicos");
-                intent.putExtra("image",R.drawable.imgTech);
+                intent.putExtra("image",R.drawable.tecnology);
                 startActivity(intent);
             }
         });
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
                 intent.putExtra("description","En esta sección encontrará artículos deportivos");
-                intent.putExtra("image",R.drawable.imgSports);
+                intent.putExtra("image",R.drawable.sports);
                 startActivity(intent);
             }
         });
