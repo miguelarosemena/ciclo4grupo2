@@ -42,7 +42,7 @@
                     android:id="@+id/btnFurniture"
                     android:layout_width="match_parent"
                     android:layout_height="41dp"
-                    android:text="Más Información" />
+                    android:text="@string/btn_info" />
             </LinearLayout>
 
             <LinearLayout
@@ -61,7 +61,7 @@
                     android:id="@+id/btnTech"
                     android:layout_width="match_parent"
                     android:layout_height="41dp"
-                    android:text="Más información" />
+                    android:text="@string/btn_info" />
             </LinearLayout>
 
             <LinearLayout
@@ -80,7 +80,7 @@
                     android:id="@+id/btnSports"
                     android:layout_width="match_parent"
                     android:layout_height="41dp"
-                    android:text="Más información" />
+                    android:text="@string/btn_info" />
             </LinearLayout>
 
         </LinearLayout>

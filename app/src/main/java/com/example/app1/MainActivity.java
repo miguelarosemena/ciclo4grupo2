@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
-                intent.putExtra("description","En esta sección encontarrá variedad de Muebeles y accesorios para el hogar");
+                intent.putExtra("description","Querida Tribu, en esta sección encontrarás gran variedad de Muebles y accesorios para el hogar. Antojate y haznos parte de tu casa");
                 intent.putExtra("image",R.drawable.furniture);
                 startActivity(intent);
             }
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
-                intent.putExtra("description","En esta sección encontrará todos los artículos tecnolóogicos");
+                intent.putExtra("description","Querida Tribu, en esta sección encontrarás gran variedad de productos tecnológicos. Antojate y dejanos acompañarnos desde el mundo digital");
                 intent.putExtra("image",R.drawable.tecnology);
                 startActivity(intent);
             }
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
-                intent.putExtra("description","En esta sección encontrará artículos deportivos");
+                intent.putExtra("description","Querida Tribu, en esta sección encontrarás todos los artículos deportivos que requieres. Dejános acompañarnos en tus ratos de esparcimiento y oxigenación");
                 intent.putExtra("image",R.drawable.sports);
                 startActivity(intent);
             }

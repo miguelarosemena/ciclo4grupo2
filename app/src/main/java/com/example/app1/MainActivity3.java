@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity3 extends AppCompatActivity {
-    private Button btnReturn;
+    private Button btnContinue;
     private TextView textDescription;
     private ImageView imgProduct;
 
@@ -19,7 +19,7 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        btnReturn=(Button) findViewById(R.id.btnReturn);
+        btnContinue=(Button) findViewById(R.id.btnContinue);
         textDescription=(TextView) findViewById(R.id.textDescription);
         imgProduct=(ImageView) findViewById(R.id.imgProduct);
 
@@ -27,10 +27,10 @@ public class MainActivity3 extends AppCompatActivity {
         textDescription.setText(intentIn.getStringExtra("description"));
         imgProduct.setImageResource(intentIn.getIntExtra("image",0));
 
-        btnReturn.setOnClickListener(new View.OnClickListener() {
+        btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Catalogo.class);
                 startActivity(intent);
             }
         });
