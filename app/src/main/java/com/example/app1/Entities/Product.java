@@ -1,17 +1,37 @@
 package com.example.app1.Entities;
 
+import java.util.UUID;
+
 public class Product {
+    private String id;
     private String name;
     private String description;
     private String price;
-    private int image;
+    private String image;
 
 
-    public Product(String name, String description, String price, int image) {
+    public Product(String id, String name, String description, String price, String image) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.image = image;
+    }
+
+    public Product(String name, String description, String price, String image) {
+        this.id = UUID.randomUUID().toString();
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.image = image;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -38,14 +58,11 @@ public class Product {
         this.price = price;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
-
-
-
 }

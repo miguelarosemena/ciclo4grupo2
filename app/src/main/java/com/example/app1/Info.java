@@ -9,33 +9,43 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.app1.Entities.Product;
+
 public class Info extends AppCompatActivity {
 
-    private TextView TextNameInfo, TextDescriptionInfo, TextPriceInfo;
-    private ImageView ImgInfo;
-    private Button BtnInfo;
+    private TextView textNameInfo, textDescriptionInfo, textPriceInfo, textIdInfo;
+    private ImageView imgInfo;
+    private Button btnInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        TextNameInfo=(TextView) findViewById(R.id.textNameInfo);
-        TextDescriptionInfo=(TextView) findViewById(R.id.textDescriptionInfo);
-        TextPriceInfo=(TextView) findViewById(R.id.textPriceInfo);
-        ImgInfo=(ImageView) findViewById(R.id.imgInfo);
-        BtnInfo=(Button) findViewById(R.id.btnInfo);
+        textIdInfo=(TextView) findViewById(R.id.textIdInfo);
+        textNameInfo=(TextView) findViewById(R.id.textNameInfo);
+        textDescriptionInfo=(TextView) findViewById(R.id.textDescriptionInfo);
+        textPriceInfo=(TextView) findViewById(R.id.textPriceInfo);
+        imgInfo=(ImageView) findViewById(R.id.imgInfo);
+        btnInfo=(Button) findViewById(R.id.btnInfo);
 
         Intent intentIN=getIntent();
-        TextNameInfo.setText(intentIN.getStringExtra("name"));
-        TextDescriptionInfo.setText(intentIN.getStringExtra("description"));
-        TextPriceInfo.setText(intentIN.getStringExtra("price"));
-        ImgInfo.setImageResource(intentIN.getIntExtra("img",0));
+        Product product =new Product(
+                intentIN.getStringExtra("id"),
+                intentIN.getStringExtra("name"),
+                intentIN.getStringExtra("description"),
+                intentIN.getStringExtra("price"),
+                intentIN.getStringExtra("image")
+        );
+
+        textIdInfo.setText(product.getId());
+        textNameInfo.setText(product.getName());
+        textDescriptionInfo.setText(product.getDescription());
+        textPriceInfo.setText(product.getPrice());
+        imgInfo.setImageResource(Integer.parseInt(product.getImage()));
 
 
-
-
-        BtnInfo.setOnClickListener(new View.OnClickListener() {
+        btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), Catalogo.class);

@@ -12,7 +12,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.app1.Adaptadores.productoAdaptador;
+import com.example.app1.Adapters.ProductAdapter;
+import com.example.app1.DB.DBFirebase;
 import com.example.app1.Entities.Product;
 
 import java.util.ArrayList;
@@ -20,34 +21,54 @@ import java.util.ArrayList;
 public class Catalogo extends AppCompatActivity {
 
     private ListView listViewProducts;
-    private productoAdaptador productoAdaptador;
-    private ArrayList<Product> arrayProduct;
+    private ProductAdapter productoAdaptador;
+    private ArrayList<Product> arrayProducts;
     private Button btnReturn;
+    private DBFirebase dbFirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogo);
 
+        dbFirebase=new DBFirebase();
         btnReturn=(Button) findViewById(R.id.btnReturn);
         listViewProducts=(ListView) findViewById(R.id.listViewProducts);
-        arrayProduct=new ArrayList<>();
-        productoAdaptador=new productoAdaptador(this, arrayProduct);
+        arrayProducts=new ArrayList<>();
+
+
 
         //**Creación de los productos
-        Product Product1=new Product("Silla italia blanca", "Silla italiana blanca tipo living exteriores", "1000",R.drawable.furniture1);
-        Product Product2=new Product("Silla italia verde", "Silla italiana verde living exteriores", "1000",R.drawable.furniture2);
-        Product Product3=new Product("Isabelina Yellow Modern", "Isabelina moderna de interiores color amarillo mostaza", "2500",R.drawable.furniture3);
-        Product Product4=new Product("Isabelina Beige Modern", "Isabelina moderna de interiores color beige madera", "2500",R.drawable.furniture4);
+        /*
+        Product product1=new Product("Producto 1","Desc.1", "1000", String.valueOf(R.drawable.furniture1));
+        Product product2=new Product("Producto 2","Desc.2", "2000", String.valueOf(R.drawable.furniture2));
+        Product product3=new Product("Producto 3","Desc.3", "3000", String.valueOf(R.drawable.furniture3));
+        Product product4=new Product("Producto 4","Desc.4", "4000", String.valueOf(R.drawable.furniture4));
+        Product product5=new Product("Producto 5","Desc.5", "5000", String.valueOf(R.drawable.furniture1));
+        Product product6=new Product("Producto 6","Desc.6", "6000", String.valueOf(R.drawable.furniture2));
+        Product product7=new Product("Producto 7","Desc.7", "7000", String.valueOf(R.drawable.furniture3));
+        Product product8=new Product("Producto 8","Desc.8", "8000", String.valueOf(R.drawable.furniture4));
+        Product product9=new Product("Producto 9","Desc.9", "9000", String.valueOf(R.drawable.furniture1));
 
-        arrayProduct.add(Product1);
-        arrayProduct.add(Product2);
-        arrayProduct.add(Product3);
-        arrayProduct.add(Product4);
+        arrayProduct.add(product1);
+        arrayProduct.add(product2);
+        arrayProduct.add(product3);
+        arrayProduct.add(product4);
+        arrayProduct.add(product5);
+        arrayProduct.add(product6);
+        arrayProduct.add(product7);
+        arrayProduct.add(product8);
+        arrayProduct.add(product9);
+        */
 
         //** Fin creación productos
 
+
+        productoAdaptador=new ProductAdapter(this,arrayProducts);
         listViewProducts.setAdapter(productoAdaptador);
+
+
+        dbFirebase.getData(productoAdaptador);
 
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
