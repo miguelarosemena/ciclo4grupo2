@@ -8,5 +8,9 @@
     <string name="btn_return">Volver</string>
     <string name="btn_continue">Continuar</string>
     <string name="btn_add">Agregar</string>
+    <string name="email">Correo: </string>
+    <string name="password">Contraseña: </string>
+    <string name="btn_login">Logearse</string>
+    <string name="btn_register">Registrarse</string>
 
 </resources>

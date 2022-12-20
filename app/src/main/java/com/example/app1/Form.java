@@ -30,6 +30,13 @@ public class Form extends AppCompatActivity {
 
         dbFirebase=new DBFirebase();
 
+        Intent intentIN=getIntent();
+        if(intentIN.getBooleanExtra("edit",false)){
+            editName.setText(intentIN.getStringExtra("name"));
+            editDescription.setText(intentIN.getStringExtra("description"));
+            editPrice.setText(intentIN.getStringExtra("price"));
+        }
+
         btnForm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,8 +44,17 @@ public class Form extends AppCompatActivity {
                         editName.getText().toString(),
                         editDescription.getText().toString(),
                         editPrice.getText().toString(),
-                        String.valueOf(R.drawable.furniture1)
+                        String.valueOf(R.drawable.furniture1),
+                        "0",
+                        "0"
                 );
+                if(intentIN.getBooleanExtra("edit",false)){
+                    product.setId(intentIN.getStringExtra("id"));
+                    dbFirebase.updateData(product);
+                }else{
+                    dbFirebase.insertData(product);
+                }
+
 
                 dbFirebase.insertData(product);
                 Intent intent= new Intent(getApplicationContext(),Catalogo.class);

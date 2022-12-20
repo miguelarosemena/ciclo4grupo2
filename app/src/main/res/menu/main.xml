@@ -8,8 +8,8 @@
         app:showAsAction="always"
         android:title="" />
     <item
-        android:id="@+id/itemShare"
-        android:icon="@drawable/ic_baseline_share_24"
+        android:id="@+id/itemMap"
+        android:icon="@drawable/ic_baseline_map_24"
         app:showAsAction="always"
         android:title="" />
     <item
@@ -22,6 +22,11 @@
                 android:id="@+id/itemAdd"
                 app:showAsAction="ifRoom"
                 android:title="Agregar" />
+
+            <item
+                android:id="@+id/itemShare"
+                app:showAsAction="ifRoom"
+                android:title="Compartir"/>
         </menu>
     </item>
 

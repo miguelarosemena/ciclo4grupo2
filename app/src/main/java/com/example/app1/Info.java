@@ -35,7 +35,9 @@ public class Info extends AppCompatActivity {
                 intentIN.getStringExtra("name"),
                 intentIN.getStringExtra("description"),
                 intentIN.getStringExtra("price"),
-                intentIN.getStringExtra("image")
+                intentIN.getStringExtra("image"),
+                intentIN.getStringExtra("latitud"),
+                intentIN.getStringExtra("longitud")
         );
 
         textIdInfo.setText(product.getId());

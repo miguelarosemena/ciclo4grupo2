@@ -90,11 +90,16 @@ public class Catalogo extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch (item.getItemId()){
             case R.id.itemAdd:
-                Intent intent =new Intent(getApplicationContext(),Form.class);
+                intent =new Intent(getApplicationContext(),Form.class);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Agregar", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.itemMap:
+                intent=new Intent(getApplicationContext(),Maps.class);
+                startActivity(intent);
                 return true;
             case R.id.itemFavorite:
                 Toast.makeText(getApplicationContext(),"Favorito", Toast.LENGTH_LONG).show();
